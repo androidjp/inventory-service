@@ -31,12 +31,6 @@ spring:
   zipkin:
     base-url: http://zipkin.team-a.cloud.school.thoughtworks.cn
 
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
-
 logging:
   level:
     org.springframework.web: DEBUG
@@ -47,4 +41,11 @@ springfox:
       v2:
         path: /swagger
 
-#TODO: config actuator endpoints to expose
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
